@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Interest Calculator</title>
+    <title>Even or Odd Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-    <h2>Simple Interest Calculator</h2>
 
-    Principal: <input type="number" id="p"><br><br>
-    Rate: <input type="number" id="r"><br><br>
-    Time: <input type="number" id="t"><br><br>
+    <h1>Even and Odd Number Checker</h1>
 
-    <button onclick="calculateSI()">Calculate</button>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check</button>
 
-    <h3 id="result"></h3>
+    <p id="result"></p>
 
     <script>
-        function calculateSI() {
-            let p = parseFloat(document.getElementById("p").value);
-            let r = parseFloat(document.getElementById("r").value);
-            let t = parseFloat(document.getElementById("t").value);
+        function checkNumber() {
+            let number = document.getElementById("num").value;
 
-            let si = (p * r * t) / 100;
-
-            document.getElementById("result").innerHTML =
-                "Simple Interest = " + si;
+            if (number === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter a number!";
+            }
+            else if (number % 2 == 0) {
+                document.getElementById("result").innerHTML =
+                    number + " is an Even Number";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    number + " is an Odd Number";
+            }
         }
     </script>
+
 </body>
 </html>
