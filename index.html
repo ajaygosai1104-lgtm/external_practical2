@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <h2>Simple Interest Calculator</h2>
+
+    Principal: <input type="number" id="p"><br><br>
+    Rate: <input type="number" id="r"><br><br>
+    Time: <input type="number" id="t"><br><br>
+
+    <button onclick="calculateSI()">Calculate</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateSI() {
+            let p = parseFloat(document.getElementById("p").value);
+            let r = parseFloat(document.getElementById("r").value);
+            let t = parseFloat(document.getElementById("t").value);
+
+            let si = (p * r * t) / 100;
+
+            document.getElementById("result").innerHTML =
+                "Simple Interest = " + si;
+        }
+    </script>
+</body>
+</html>
